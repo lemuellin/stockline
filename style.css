@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+body{
+    background-image: url('./image/5330558.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topBar{
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    #searchBar{
+        margin-left: 30px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    label>img{
+        width:30px;
+    }
+
+    input{
+        height: 30px;
+        border: 1px solid lightgray;
+        border-radius: 20px;
+        padding-left: 15px; 
+    }
+
+    .loading{
+        display: none;
+        width: 30px;
+        height: 30px;
+    }
+
+    .errMsg{
+        display: none;
+        color: red;
+    }
+
+    .enter{
+        display: none;
+    }
+
+    .topBar>div{
+        margin-right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.2rem;
+    }
+
+
+.mainPanel{
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .ticker, .ma3, .ma21, .ma40, .result{
+        width: 200px;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .ticker{
+        align-self: center;
+    }
