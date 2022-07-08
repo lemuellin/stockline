@@ -77,13 +77,23 @@ body{
     justify-content: center;
     align-items: center;
 }
+    .nameContainer{
+        display: flex;
+    }
 
-    .ticker, .ma3, .ma21, .ma40, .result{
-        width: 200px;
+    .ticker{
+        width: 100px;
         font-size: 1.5rem;
         font-weight: 700;
     }
 
-    .ticker{
-        align-self: center;
+    .stockName{
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .ma3, .ma21, .ma40, .result{
+        width: 200px;
+        font-size: 1.5rem;
+        font-weight: 700;
     }

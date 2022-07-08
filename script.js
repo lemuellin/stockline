@@ -15,6 +15,7 @@ async function getData(ticker){
         errMsg.style.display = 'none';
         loading.style.display = "block";
         mainPanel.style.display = "flex";
+        // fetch data - MA3, MA21, MA40
         let url = "https://api.finmindtrade.com/api/v4/data?";
         const response = await fetch(url + new URLSearchParams({
             "dataset": "TaiwanStockPrice",
@@ -24,7 +25,17 @@ async function getData(ticker){
         }));
         const allData = await response.json();
         await sortData(allData);
-        renderDisplay(ticker, data, result);
+
+        // fetch stock name
+        const response2 = await fetch(url + new URLSearchParams({
+            "dataset": "TaiwanStockInfo",
+            "data_id": ticker,
+            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyMi0wNy0wNyAxNjo0ODowOCIsInVzZXJfaWQiOiJsZW11ZWxsaW4iLCJpcCI6IjM2LjIzNC4xNy4xMDIifQ.H2Xl8hGCOhcCel_yuLJiq8hVrLwA8kCi54KLfDnrAbE",
+        }));
+        const stockNameData = await response2.json();
+        const stockName = stockNameData.data[0].stock_name;
+
+        renderDisplay(stockName, ticker, data, result);
         loading.style.display = "none";
     } catch (error) {
         errMsg.style.display = 'block';
@@ -57,7 +68,8 @@ function sortData(allData){
     }
 }
 
-function renderDisplay(ticker, data, result){
+function renderDisplay(stockName, ticker, data, result){
+    document.querySelector('.stockName').textContent = stockName;
     document.querySelector('.ticker').textContent = ticker;
     document.querySelector('.ma3').textContent = `MA3: ${data[0]}`;
     document.querySelector('.ma21').textContent = `MA21: ${data[1]}`;
