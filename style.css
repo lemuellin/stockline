@@ -56,18 +56,12 @@ body{
     }
 
     .enter{
-        display: none;
+        font-size: 1rem;
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(251, 205, 118);
     }
-
-    .topBar>div{
-        margin-right: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.2rem;
-    }
-
 
 .mainPanel{
     width: 800px;
@@ -79,6 +73,7 @@ body{
 }
     .nameContainer{
         display: flex;
+        width: 200px;
     }
 
     .ticker{

@@ -39,6 +39,7 @@ async function getData(ticker){
         loading.style.display = "none";
     } catch (error) {
         errMsg.style.display = 'block';
+        loading.style.display = "none";
         errMsg.textContent = "Please input proper ticker symbol.";
         mainPanel.style.display = 'none';
     } 
